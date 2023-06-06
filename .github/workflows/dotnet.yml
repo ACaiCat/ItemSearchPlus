@@ -31,13 +31,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Si
-          path: /home/runner/work/Si/Si/bin/Debug/net6.0/Si.*
+          path: /home/runner/work/ItemSearchPlus/ItemSearchPlus/bin/Debug/net6.0/Si.*
         
       - name: Prepare Artifact
         id: pa
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: 
-          zip -r Si.zip . -i /home/runner/work/Si/Si/bin/Debug/net6.0/Si.* 
+          zip -r Si.zip . -i /home/runner/work/ItemSearchPlus/ItemSearchPlus/bin/Debug/net6.0/Si.* 
       
       - name: Release
         uses: softprops/action-gh-release@v1
