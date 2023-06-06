@@ -110,7 +110,7 @@ public class MainPlugin : TerrariaPlugin
                 return;
             }
         }
-        args.Player.SendSuccessMessage($"已移除玩家{acc.Name}的所有{TShock.Utils.ItemTag(new() { netID = 1,stack=1,prefix=0})}");
+        args.Player.SendSuccessMessage($"已移除玩家{acc.Name}的所有{TShock.Utils.ItemTag(new() { netID = item,stack=1,prefix=0})}");
         return;
 
 
@@ -170,7 +170,7 @@ public class MainPlugin : TerrariaPlugin
         {
             itemStr = "空箱子";
         }
-        args.Player.SendSuccessMessage($"箱子中的所以{TShock.Utils.ItemTag(new() { netID = 1, stack = 1, prefix = 0 })}已被移除\n" +
+        args.Player.SendSuccessMessage($"箱子中的所以{TShock.Utils.ItemTag(new() { netID = item, stack = 1, prefix = 0 })}已被移除\n" +
             $"箱子ID:{args.Parameters[0]}\n" +
             $"坐标:({chest.x},{chest.y})\n" +
             $"名字:{(string.IsNullOrEmpty(chest.name) ? "无名箱子" : chest.name)}\n" +
@@ -382,7 +382,7 @@ public class MainPlugin : TerrariaPlugin
             //queryResult.Read();
             while (queryResult.Reader.Read())
             {
-                data.Add(queryResult.Reader.GetInt16(0), queryResult.Reader.GetString(5));
+                data.Add(queryResult.Reader.GetInt32(0), queryResult.Reader.GetString(5));
             }
             foreach (UserAccount item2 in userAccounts)
             {
