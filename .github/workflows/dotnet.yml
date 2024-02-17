@@ -29,7 +29,7 @@ jobs:
         run: dotnet build -c Release
              
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Si
           path: /home/runner/work/ItemSearchPlus/ItemSearchPlus/bin/Release/net6.0/Si.*
