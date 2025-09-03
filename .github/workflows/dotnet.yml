@@ -41,7 +41,7 @@ jobs:
           zip -r Si.zip /home/runner/work/ItemSearchPlus/ItemSearchPlus/bin/Release/net6.0/Si.*
       
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         with:
           prerelease: false
